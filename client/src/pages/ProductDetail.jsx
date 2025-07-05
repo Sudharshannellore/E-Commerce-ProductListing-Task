@@ -22,7 +22,7 @@ function ProductDetail() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/products/get/${id}`);
+        const response = await axios.get(`https://e-commerce-productlisting.onrender.com/products/get/${id}`);
         setProduct(response.data[0] || null);
       } catch (error) {
         console.error('Error fetching product:', error);
@@ -43,7 +43,7 @@ function ProductDetail() {
 
   const handleAddToCart = async () => {
     try {
-      await axios.post('http://localhost:8000/cart/save', {
+      await axios.post('https://e-commerce-productlisting.onrender.com/cart/save', {
         product,
         quantity,
       });
