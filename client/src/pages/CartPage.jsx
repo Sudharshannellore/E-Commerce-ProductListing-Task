@@ -8,7 +8,7 @@ const CartPage = () => {
     useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/cart/get')
+        const response = await axios.get('https://e-commerce-productlisting.onrender.com/cart/get')
         setCartItems(response.data || []) // Properly accessing response data
       } catch (error) {
         console.error('Error fetching products:', error)
@@ -25,7 +25,7 @@ const CartPage = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/cart/delete/${id}`);
+      await axios.delete(`https://e-commerce-productlisting.onrender.com/cart/delete/${id}`);
       setCartItems((prev) => prev.filter((item) => item._id !== id));
     } catch (error) {
       console.error('Delete failed:', error);
